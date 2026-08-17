@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { navPanel } from "../content/site";
 
 const simpleItems = [
+  { label: "模型", href: "/models" },
   { label: "项目", href: "/projects" },
   { label: "学习路径", href: "/learning-paths" },
 ] as const;
@@ -67,7 +68,8 @@ export function SiteNavigation() {
           </div>
           <div className="mobile-nav-group">
             <span>更多</span>
-            {simpleItems.map((item) => (
+            <Link href="/models">模型</Link>
+            {simpleItems.filter(i => i.href !== "/models").map((item) => (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
           </div>
