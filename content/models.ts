@@ -3,147 +3,79 @@ export type ModelNode = {
   href: string;
 };
 
-export type ModelBranch = {
+export type TaskGuide = {
   id: string;
-  title: string;
-  description: string;
-  groups: { title: string; items: (string | ModelNode)[] }[];
+  task: string;
+  scenario: string;
+  models: ModelNode[];
+  note: string;
 };
 
-export const modelTree: ModelBranch[] = [
+export const modelSelectionGuide: TaskGuide[] = [
   {
-    id: "machine-learning",
-    title: "机器学习",
-    description: "工程 AI 的第一站，结构化数据上分类、回归、异常检测、集成学习",
-    groups: [
-      {
-        title: "监督学习",
-        items: [
-          { label: "分类", href: "/models/machine-learning" },
-          { label: "回归", href: "/models/machine-learning" },
-        ],
-      },
-      {
-        title: "无监督学习",
-        items: [
-          { label: "聚类", href: "/models/machine-learning" },
-          { label: "异常检测", href: "/models/machine-learning" },
-        ],
-      },
-      {
-        title: "常用模型",
-        items: [
-          { label: "Linear Regression", href: "/models/machine-learning" },
-          { label: "Logistic Regression", href: "/models/machine-learning" },
-          { label: "SVM", href: "/models/machine-learning" },
-          { label: "Decision Tree", href: "/models/machine-learning" },
-          { label: "Random Forest", href: "/models/random-forest" },
-          { label: "XGBoost", href: "/models/machine-learning" },
-          { label: "Isolation Forest", href: "/models/machine-learning" },
-        ],
-      },
+    id: "classification",
+    task: "结构化故障分类",
+    scenario: "特征表 + 标签，样本量几百到几万，需要看特征重要性",
+    models: [
+      { label: "Random Forest", href: "/models/random-forest" },
+      { label: "XGBoost", href: "/models/machine-learning" },
+      { label: "LightGBM", href: "/models/machine-learning" },
     ],
+    note: "RF 默认基线，XGBoost/LightGBM 提升精度，SHAP 解释单样本",
   },
   {
-    id: "deep-learning",
-    title: "深度学习",
-    description: "原始信号或复杂时序用神经网络自动学特征，CNN 适合局部模式，LSTM/Transformer 适合序列",
-    groups: [
-      {
-        title: "基础与结构",
-        items: [
-          { label: "神经网络", href: "/models/deep-learning" },
-          { label: "CNN", href: "/models/deep-learning" },
-          { label: "RNN", href: "/models/deep-learning" },
-          { label: "LSTM / GRU", href: "/models/deep-learning" },
-          { label: "Autoencoder", href: "/models/deep-learning" },
-          { label: "Transformer", href: "/models/deep-learning" },
-        ],
-      },
+    id: "anomaly",
+    task: "时序异常检测",
+    scenario: "无标签或少量标签，从 CAN 连续信号中识别异常片段",
+    models: [
+      { label: "Isolation Forest", href: "/models/machine-learning" },
+      { label: "Autoencoder", href: "/models/deep-learning" },
+      { label: "LSTM 重构", href: "/models/deep-learning" },
     ],
-  },
-  {
-    id: "time-series",
-    title: "时间序列",
-    description: "车辆信号的历史依赖、变化趋势和异常状态",
-    groups: [
-      {
-        title: "任务",
-        items: [
-          { label: "预测", href: "/models/deep-learning" },
-          { label: "分类", href: "/models/deep-learning" },
-          { label: "异常检测", href: "/models/machine-learning" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "signal-processing",
-    title: "信号处理",
-    description: "把声音和振动从时域转到频域和时频域，是声学故障项目的基线",
-    groups: [
-      {
-        title: "核心方法",
-        items: [
-          { label: "FFT", href: "/models/fft" },
-          { label: "STFT", href: "/models/deep-learning" },
-          { label: "PSD", href: "/models/fft" },
-          { label: "Spectrogram", href: "/models/deep-learning" },
-          { label: "MFCC", href: "/models/deep-learning" },
-        ],
-      },
-    ],
+    note: "IF 无监督基线，AE/LSTM 适合复杂时序模式，PyOD 提供 30+ 算法",
   },
   {
     id: "optimization",
-    title: "优化算法",
-    description: "AI 标定的核心技术线，试验昂贵时用代理模型找最优参数",
-    groups: [
-      {
-        title: "搜索与优化",
-        items: [
-          { label: "Grid Search", href: "/models/machine-learning" },
-          { label: "Genetic Algorithm", href: "/models/machine-learning" },
-          { label: "PSO", href: "/models/machine-learning" },
-          { label: "Bayesian Optimization", href: "/models/bayesian-optimization" },
-          { label: "Multi-objective Optimization", href: "/models/machine-learning" },
-        ],
-      },
+    task: "参数寻优",
+    scenario: "试验昂贵，评价函数不可导，需要显式利用历史结果",
+    models: [
+      { label: "Bayesian Optimization", href: "/models/bayesian-optimization" },
+      { label: "PPO", href: "/models/reinforcement-learning" },
+      { label: "SAC", href: "/models/reinforcement-learning" },
     ],
+    note: "BO 首选，PPO/SAC 适合仿真预标定，BO 配合多目标做 Pareto 决策",
   },
   {
-    id: "reinforcement-learning",
-    title: "强化学习",
-    description: "让智能体在环境中试错学习策略，仿真预标定和能量管理是电驱场景的主战场",
-    groups: [
-      {
-        title: "核心概念",
-        items: [
-          { label: "State", href: "/models/reinforcement-learning" },
-          { label: "Action", href: "/models/reinforcement-learning" },
-          { label: "Reward", href: "/models/reinforcement-learning" },
-          { label: "Policy", href: "/models/reinforcement-learning" },
-          { label: "Environment", href: "/models/reinforcement-learning" },
-        ],
-      },
+    id: "frequency",
+    task: "声音频域分析",
+    scenario: "从控制件异响中提取频率和时频特征",
+    models: [
+      { label: "FFT", href: "/models/fft" },
+      { label: "STFT", href: "/models/deep-learning" },
+      { label: "MFCC", href: "/models/deep-learning" },
     ],
+    note: "FFT 是基线，STFT 处理非平稳信号，MFCC 压缩为特征向量",
   },
   {
-    id: "llm",
-    title: "大模型",
-    description: "在 Agent 规划和 RAG 问答中承担核心，但不能替代精确工程算法",
-    groups: [
-      {
-        title: "核心概念",
-        items: [
-          { label: "Transformer", href: "/models/deep-learning" },
-          { label: "Token", href: "/models/deep-learning" },
-          { label: "Embedding", href: "/models/deep-learning" },
-          { label: "Pretraining", href: "/models/deep-learning" },
-          { label: "Fine-tuning", href: "/models/deep-learning" },
-          { label: "Multimodal", href: "/models/deep-learning" },
-        ],
-      },
+    id: "deep-time",
+    task: "深度时序建模",
+    scenario: "原始信号或复杂时序模式，需要自动特征提取",
+    models: [
+      { label: "CNN", href: "/models/deep-learning" },
+      { label: "LSTM", href: "/models/deep-learning" },
+      { label: "Transformer", href: "/models/deep-learning" },
     ],
+    note: "CNN 适合局部模式，LSTM/Transformer 适合长序列依赖",
+  },
+  {
+    id: "rag-agent",
+    task: "知识检索与工程编排",
+    scenario: "文档问答、案例检索、多步工程工作流编排",
+    models: [
+      { label: "RAG", href: "/applications/rag" },
+      { label: "Agent", href: "/applications/agent" },
+      { label: "LangGraph", href: "/models/deep-learning" },
+    ],
+    note: "RAG 检索文档知识，Agent 编排工具链，LangGraph 管理状态工作流",
   },
 ];

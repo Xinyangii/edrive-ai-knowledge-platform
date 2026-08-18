@@ -38,12 +38,12 @@ export const applicationTree: ApplicationGroup[] = [
     title: "RAG",
     description: "把企业内部故障案例和技术规范检索出来，让大模型基于证据回答",
     items: [
-      { label: "文档解析", href: "https://python.langchain.com/docs/how_to/document_loader_pdf/" },
-      { label: "Chunking", href: "https://python.langchain.com/docs/concepts/text_splitters/" },
+      { label: "文档解析", href: "https://docs.langchain.com/oss/python/langchain/docs/how_to/document_loader_pdf/" },
+      { label: "Chunking", href: "https://docs.langchain.com/oss/python/langchain/docs/concepts/text_splitters/" },
       { label: "Embedding", href: "https://platform.openai.com/docs/guides/embeddings" },
       { label: "Vector Database", href: "https://www.pinecone.io/learn/vector-database/" },
-      { label: "Retrieval", href: "https://python.langchain.com/docs/concepts/retrieval/" },
-      { label: "Generation", href: "https://python.langchain.com/docs/concepts/rag/" },
+      { label: "Retrieval", href: "https://docs.langchain.com/oss/python/langchain/docs/concepts/retrieval/" },
+      { label: "Generation", href: "https://docs.langchain.com/oss/python/langchain/docs/concepts/rag/" },
     ],
   },
   {
@@ -52,9 +52,9 @@ export const applicationTree: ApplicationGroup[] = [
     description: "用 LLM 把工具、状态、流程串成多步工程任务，承担诊断和标定里的编排角色",
     items: [
       { label: "LLM", href: "https://platform.openai.com/docs/" },
-      { label: "Tool", href: "https://python.langchain.com/docs/concepts/tools/" },
+      { label: "Tool", href: "https://docs.langchain.com/oss/python/langchain/docs/concepts/tools/" },
       { label: "State", href: "https://langchain-ai.github.io/langgraph/concepts/state/" },
-      { label: "Memory", href: "https://python.langchain.com/docs/concepts/memory/" },
+      { label: "Memory", href: "https://docs.langchain.com/oss/python/langchain/docs/concepts/memory/" },
       { label: "Workflow", href: "https://langchain-ai.github.io/langgraph/concepts/" },
       { label: "Human-in-the-loop", href: "https://langchain-ai.github.io/langgraph/concepts/human_in_the_loop/" },
     ],
@@ -64,7 +64,7 @@ export const applicationTree: ApplicationGroup[] = [
     title: "框架",
     description: "构建模型调用、检索、有状态工作流的工程框架",
     items: [
-      { label: "LangChain", href: "https://python.langchain.com/" },
+      { label: "LangChain", href: "https://docs.langchain.com/oss/python/langchain/" },
       { label: "LangGraph", href: "https://langchain-ai.github.io/langgraph/" },
     ],
   },

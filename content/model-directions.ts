@@ -24,8 +24,8 @@ export const modelDirections: DirectionDetail[] = [
     english: "Machine Learning & Ensemble",
     summary: "诊断和声学项目里最常用的一类方法。从结构化特征表出发，用监督学习做分类和回归，集成学习处理非线性关系",
     overview: [
-      "工程上 80% 的故障分类、异常检测、驾驶性评价问题在结构化数据上就能解决。机器学习的价值在于用一张特征表快速判断数据是否真的有用。",
-      "集成学习把多棵差异化的弱学习器组合起来，降低单模型方差，是工程基线首选。",
+      "结构化数据上的故障分类、异常检测和驾驶性评价，工程基线首选。用一张特征表快速判断数据是否有效。",
+      "集成学习降低单模型方差，诊断和声学项目里 RF 跑完再看要不要上 XGBoost 或 CNN。",
     ],
     classics: [
       {
@@ -115,8 +115,8 @@ export const modelDirections: DirectionDetail[] = [
     english: "Reinforcement Learning",
     summary: "让智能体在环境中试错，学习从状态到动作的策略。电驱场景目前主要落在仿真预标定、能量管理、控制参数寻优",
     overview: [
-      "RL 不是拟合输入输出，而是学一个让长期回报最大的策略。状态-动作-奖励-策略-环境五要素构成闭环。",
-      "电驱工程里 RL 的强项是连续决策：扭矩分配、能量管理、模式切换、参数寻优。这些任务的评价函数无法解析求导，只能通过试错。",
+      "RL 学一个让长期回报最大的策略，不拟合输入输出。状态-动作-奖励-策略-环境五要素构成闭环。",
+      "电驱工程里 RL 适合连续决策：扭矩分配、能量管理、模式切换、参数寻优。评价函数无法解析求导，只能通过试错。",
     ],
     classics: [
       {
@@ -205,8 +205,8 @@ export const modelDirections: DirectionDetail[] = [
     english: "Deep Learning & Large Models",
     summary: "CNN 处理一维信号和二维声谱图，LSTM/Transformer 处理长时序，RAG 和 Agent 让大模型在企业知识库和工程工作流中真正可用",
     overview: [
-      "DL 适合原始信号复杂、人工特征设计困难的任务。CNN 擅长局部模式，LSTM 擅长序列，Transformer 擅长长距离依赖。",
-      "大模型在工程中不承担精确计算，承担文本理解、报告生成、Agent 规划和 RAG 问答。要的是把已有能力接起来。",
+      "DL 适合原始信号复杂、人工特征困难的任务。CNN 局部模式，LSTM 序列，Transformer 长距依赖。",
+      "大模型在工程中不承担精确计算，承担文本理解、Agent 规划和 RAG 问答。",
     ],
     classics: [
       {
@@ -219,7 +219,7 @@ export const modelDirections: DirectionDetail[] = [
         ],
         links: [
           { title: "PyTorch 入门", href: "https://pytorch.org/tutorials/beginner/basics/intro.html", note: "官方教程" },
-          { title: "3Blue1Brown 神经网络", href: "https://www.yt-dl.com/watch?v?v=aircAruvnKk", note: "可视化讲解" },
+          { title: "3Blue1Brown 神经网络", href: "https://www.youtube.com/watch?v=aircAruvnKk", note: "可视化讲解" },
         ],
       },
       {
@@ -232,7 +232,7 @@ export const modelDirections: DirectionDetail[] = [
         ],
         links: [
           { title: "PyTorch CNN 教程", href: "https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html", note: "官方" },
-          { title: "CS231n 课程", href: "http://cs231n.stanford.edu/", note: "斯坦福课程" },
+          { title: "CS231n 课程", href: "https://cs231n.stanford.edu/", note: "斯坦福课程" },
         ],
       },
       {
@@ -271,7 +271,7 @@ export const modelDirections: DirectionDetail[] = [
         ],
         links: [
           { title: "RAG 知识页", href: "/applications/rag", note: "本站" },
-          { title: "LangChain RAG Tutorial", href: "https://python.langchain.com/docs/tutorials/rag/", note: "官方教程" },
+          { title: "LangChain RAG Tutorial", href: "https://docs.langchain.com/oss/python/langchain/docs/tutorials/rag/", note: "官方教程" },
         ],
       },
       {
