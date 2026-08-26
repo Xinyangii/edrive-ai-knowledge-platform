@@ -3,6 +3,88 @@ import { join } from "path";
 import Link from "next/link";
 import { marked } from "marked";
 
+// ====== 飞书文档引用映射 ======
+// 将 doc-id 和 file-type 映射为可点击的飞书链接
+const feishuLinkMap: Record<string, { type: string; title: string }> = {
+  "YG6Nws2oziiIInkBNaNciG5Pnyc": { type: "wiki", title: "VDC7版本说明与操作手顺_20260712" },
+  "OqCEwHCkxiawTFkI4KucDsNAnRf": { type: "wiki", title: "常用系统介绍级入口" },
+  "WELSbloF8aSFmZs7JuPcZeRsn9c": { type: "base", title: "MCU平台管理表" },
+  "Jm9pbA5eMogaq9xCi3Lc0s6jnhe": { type: "file", title: "车用电机及控制相关介绍V1.0.pptx" },
+  "OL0Ms18ONlYtnIdArKwcqgbLnKe": { type: "slide", title: "电机控制器硬件培训材料V1.0" },
+  "FzPgwcD8ziqfASkHypDcZp8enGe": { type: "wiki", title: "MCU故障诊断管理平台" },
+  "MIjbs4Mayl8eh1dQnyicwKlynpd": { type: "slide", title: "驾驶性要点培训" },
+  "TmxUsoHSBhtSo6tQQIpcZSctnmg": { type: "sheets", title: "需求收集" },
+  "BlyeddULaoWHEpx1HFIcbLmPnvd": { type: "docx", title: "软件发布整车测试流程" },
+  "QQJFdC6cCoJpkKxCCO8cnVLHn9f": { type: "docx", title: "Vhome软件交付审批流程 - 使用说明" },
+};
+
+function buildFeishuUrl(docId: string, type: string): string {
+  const base = "https://hav4xarv6k.feishu.cn";
+  switch (type) {
+    case "wiki": return `${base}/wiki/${docId}`;
+    case "base": return `${base}/base/${docId}`;
+    case "sheets": return `${base}/sheets/${docId}`;
+    case "docx": return `${base}/docx/${docId}`;
+    case "slide": return `${base}/slide/${docId}`;
+    case "file": return `${base}/file/${docId}`;
+    default: return `${base}/wiki/${docId}`;
+  }
+}
+
+function getFileTypeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    wiki: "飞书文档",
+    base: "多维表格",
+    sheets: "电子表格",
+    docx: "Word 文档",
+    slide: "幻灯片",
+    file: "文件",
+  };
+  return labels[type] || "飞书资料";
+}
+
+// ====== 后处理 HTML：修复飞书标签 ======
+function postProcessHtml(html: string): string {
+  // 1. 修复 <cite> 标签 → 可点击链接
+  html = html.replace(
+    /<cite[^>]*doc-id="([^"]*)"[^>]*file-type="([^"]*)"[^>]*title="([^"]*)"[^>]*><\/cite>/g,
+    (_, docId, fileType, title) => {
+      const url = buildFeishuUrl(docId, fileType);
+      const label = getFileTypeLabel(fileType);
+      return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:#f0f5ff;border:1px solid #d0d9e8;border-radius:8px;color:#1a5cff;font-size:13px;font-weight:600;text-decoration:none;margin:2px 4px;transition:background .15s" onmouseover="this.style.background='#e0ecff'" onmouseout="this.style.background='#f0f5ff'">📄 ${title} <span style="font-size:10px;color:#6b8bba;font-weight:400">[${label}]</span></a>`;
+    }
+  );
+
+  // 2. 修复 <callout> 标签 → 带 emoji 的提示框
+  html = html.replace(
+    /<callout[^>]*emoji="([^"]*)"[^>]*>([\s\S]*?)<\/callout>/g,
+    (_, emoji, content) => {
+      const inner = content.replace(/<br\s*\/?>/g, "").trim();
+      return `<div style="background:#f8f9fa;border:1px solid #e8ecee;border-radius:14px;padding:18px 22px;margin:20px 0;border-left:4px solid #3b82f6;font-size:14px;line-height:1.8"><div style="display:flex;gap:10px;align-items:flex-start"><span style="font-size:20px;flex-shrink:0">${emoji}</span><div style="color:#4a5b6a">${inner}</div></div></div>`;
+    }
+  );
+
+  // 3. 修复 <figure> 附件标签 → 下载链接
+  html = html.replace(
+    /<figure[^>]*>[\s\S]*?<source[^>]*name="([^"]*)"[^>]*mime="([^"]*)"[^>]*token="([^"]*)"[^>]*\/>[\s\S]*?<\/figure>/g,
+    (_, name, mime, token) => {
+      const icon = mime.includes("pdf") ? "📕" : mime.includes("download") ? "📦" : "📎";
+      const url = `https://hav4xarv6k.feishu.cn/file/${token}`;
+      return `<div style="background:#f8f9fa;border:1px solid #e8ecee;border-radius:12px;padding:14px 18px;margin:14px 0;display:flex;align-items:center;gap:12px"><span style="font-size:20px">${icon}</span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">${name}</div><a href="${url}" target="_blank" rel="noopener noreferrer" style="color:var(--link);font-size:12px;text-decoration:underline">点击下载 / 查看</a></div></div>`;
+    }
+  );
+
+  // 4. 修复飞书记录链接 → 可点击链接
+  html = html.replace(
+    /https:\/\/hav4xarv6k\.feishu\.cn\/record\/(\w+)/g,
+    (_, recordId) => {
+      return `<a href="https://hav4xarv6k.feishu.cn/record/${recordId}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:#fef3e7;border:1px solid #f5dcc8;border-radius:8px;color:#c0761a;font-size:13px;font-weight:600;text-decoration:none;margin:2px 4px">🔊 查看状态机演示记录</a>`;
+    }
+  );
+
+  return html;
+}
+
 const allDocs = [
   { slug: "how-to-use-tools", title: "如何使用工具", chapter: "第一章" },
   { slug: "edrive-system", title: "如何认识电驱系统", chapter: "第二章" },
@@ -19,7 +101,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   const { slug } = await params;
   const docPath = join(process.cwd(), "content/mcu-docs", `${slug}.md`);
   const markdownContent = readFileSync(docPath, "utf-8");
-  const htmlContent = await marked.parse(markdownContent);
+  const htmlContent = postProcessHtml(await marked.parse(markdownContent));
 
   const currentIdx = allDocs.findIndex(d => d.slug === slug);
   const currentDoc = allDocs[currentIdx] || allDocs[0];
