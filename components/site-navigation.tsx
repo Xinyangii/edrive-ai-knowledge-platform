@@ -7,6 +7,7 @@ import { navPanel } from "../content/site";
 const simpleItems = [
   { label: "模型", href: "/models" },
   { label: "项目", href: "/projects" },
+  { label: "MCU学习平台", href: "/mcu-learning" },
   { label: "学习路径", href: "/learning-paths" },
 ] as const;
 
