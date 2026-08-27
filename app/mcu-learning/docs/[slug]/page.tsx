@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 import Link from "next/link";
-import { marked } from "marked";
+import { markdownToHtml } from "@/lib/markdown";
 
 // ====== 飞书文档引用映射 ======
 // 将 doc-id 和 file-type 映射为可点击的飞书链接
@@ -106,7 +106,7 @@ export default async function DocPage({ params }: { params: Promise<{ slug: stri
   const { slug } = await params;
   const docPath = join(process.cwd(), "content/mcu-docs", `${slug}.md`);
   const markdownContent = readFileSync(docPath, "utf-8");
-  const htmlContent = postProcessHtml(await marked.parse(markdownContent));
+  const htmlContent = postProcessHtml(markdownToHtml(markdownContent));
 
   const currentIdx = allDocs.findIndex(d => d.slug === slug);
   const currentDoc = allDocs[currentIdx] || allDocs[0];
