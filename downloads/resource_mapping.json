@@ -1,0 +1,218 @@
+[
+  {
+    "type": "image",
+    "token": "VHwBbBsV0oHuxtxEoLCc3tiGnNt",
+    "name": "图片展示了尚图气车终端管理助手（服务器版）的界面。界面上方有“用户认证”“工具箱”“远程协助”等选项卡，其中“工具箱”选项被红色框突出显示。在“工具箱”界面中，",
+    "local_path": "public/mcu-docs/images/VHwBbBsV0oHuxtxEoLCc3tiGnNt.png"
+  },
+  {
+    "type": "image",
+    "token": "Qpifbn1ARoypmDxmHRscLJ2xnkb",
+    "name": "图片展示了Windows系统任务管理器的“文件”菜单界面。菜单中“运行新任务”选项被红色框突出显示。该图片与文档中“软件安装”部分内容相关，用于说明在终端助手 ",
+    "local_path": "public/mcu-docs/images/Qpifbn1ARoypmDxmHRscLJ2xnkb.png"
+  },
+  {
+    "type": "image",
+    "token": "G5xWb4cOaoIVvdxrEZecjuQCnqB",
+    "name": "图片展示的是Windows系统中“任务管理器”窗口下的“新建任务”界面。界面中“打开”下拉框处有“以系统管理权限创建此任务”选项，该选项被红色框突出显示。此外，",
+    "local_path": "public/mcu-docs/images/G5xWb4cOaoIVvdxrEZecjuQCnqB.png"
+  },
+  {
+    "type": "image",
+    "token": "C7tZbxvA6oNhYgxH1tdckT7inqe",
+    "name": "图片展示的是CANoe 10.0安装包文件夹内容。文件夹内包含多个文件和文件夹，其中“autorun”文件夹被突出显示，其修改日期为2018/3/6 12:20",
+    "local_path": "public/mcu-docs/images/C7tZbxvA6oNhYgxH1tdckT7inqe.png"
+  },
+  {
+    "type": "image",
+    "token": "IduDbNysnoKnByxG6PEcA3JYnZd",
+    "name": "图片展示的是CANoe和CANalyzer V10.0 SP4的安装包文件夹。文件夹名称为“CANoeCANalyzer_V10.0_SP4”，位于文档中介绍P",
+    "local_path": "public/mcu-docs/images/IduDbNysnoKnByxG6PEcA3JYnZd.png"
+  },
+  {
+    "type": "image",
+    "token": "RxcxbjjmPoZgsPxAm1Hcw3Ptnye",
+    "name": "可将文件夹删除后解压安装",
+    "local_path": "public/mcu-docs/images/RxcxbjjmPoZgsPxAm1Hcw3Ptnye.png"
+  },
+  {
+    "type": "image",
+    "token": "Qrjeb1GUxoxNkFxigAUcGOsinWb",
+    "name": "图片展示了软件安装中INCA部分的文件夹内容。包含01_INCA_V7.2.14、02_ETK_Tools_V4.1.15、03_MDA_7_V7.2.14、0",
+    "local_path": "public/mcu-docs/images/Qrjeb1GUxoxNkFxigAUcGOsinWb.png"
+  },
+  {
+    "type": "image",
+    "token": "T0S6bCuewoKLSTxWDA2cmeibnyh",
+    "name": "这是软件安装环节相关的文件列表图片，界面内显示了三个文件，分别为名称带“Installation”的文件、名为Setup_ServicePack的应用程序文件、",
+    "local_path": "public/mcu-docs/images/T0S6bCuewoKLSTxWDA2cmeibnyh.png"
+  },
+  {
+    "type": "image",
+    "token": "JN0Pb1xPooyCqJx6LwfctT0nnUh",
+    "name": "这张图片的内容是INCA软件安装相关的系统语言更改操作指引，位于文档中INCA安装步骤的对应位置。该指引说明从INCA7.1版本开始，需将系统非unicode语",
+    "local_path": "public/mcu-docs/images/JN0Pb1xPooyCqJx6LwfctT0nnUh.png"
+  },
+  {
+    "type": "image",
+    "token": "Pe21bgnnLoyJUBxqJO3cSeRbnCd",
+    "name": "",
+    "local_path": "public/mcu-docs/images/Pe21bgnnLoyJUBxqJO3cSeRbnCd.png"
+  },
+  {
+    "type": "image",
+    "token": "PgZXbC8QboW8KqxbmFEccgR3nLf",
+    "name": "",
+    "local_path": "public/mcu-docs/images/PgZXbC8QboW8KqxbmFEccgR3nLf.png"
+  },
+  {
+    "type": "image",
+    "token": "GvwhbrgtDonN8QxcV0Ic4Pi3n9b",
+    "name": "",
+    "local_path": "public/mcu-docs/images/GvwhbrgtDonN8QxcV0Ic4Pi3n9b.png"
+  },
+  {
+    "type": "image",
+    "token": "SisMbbtHooYlvGxNQOgcLzLMnUc",
+    "name": "",
+    "local_path": "public/mcu-docs/images/SisMbbtHooYlvGxNQOgcLzLMnUc.png"
+  },
+  {
+    "type": "image",
+    "token": "OH9YbcWHBoiQmcxMRfxckVGAnsg",
+    "name": "net 配置参考",
+    "local_path": "public/mcu-docs/images/OH9YbcWHBoiQmcxMRfxckVGAnsg.png"
+  },
+  {
+    "type": "image",
+    "token": "DzkCbhR86o0Vuyxs3wXcdaRVnId",
+    "name": "此处第一开始tracer",
+    "local_path": "public/mcu-docs/images/DzkCbhR86o0Vuyxs3wXcdaRVnId.png"
+  },
+  {
+    "type": "image",
+    "token": "FcKFb1xPZoDWkrxczyXcSlemn1d",
+    "name": "上面按键对应开始、暂停、结束、播放、重播",
+    "local_path": "public/mcu-docs/images/FcKFb1xPZoDWkrxczyXcSlemn1d.png"
+  },
+  {
+    "type": "image",
+    "token": "PA3cbN9Z3o4SwvxInODceR1gnNe",
+    "name": "这张图片展示了CANalyzer的软件操作界面，直观呈现了离线数据回放的操作流程，与上下文说明的操作步骤形成对应。界面上方的“Measurement & Sti",
+    "local_path": "public/mcu-docs/images/PA3cbN9Z3o4SwvxInODceR1gnNe.png"
+  },
+  {
+    "type": "image",
+    "token": "AAiPbdsnzo1jySxRqVjc64ibnoc",
+    "name": "图片展示的是PCAN数据采集软件界面中Channels下的CAN通道信息。界面顶部有File、Home等菜单选项。Channels下有CAN、Channel 1",
+    "local_path": "public/mcu-docs/images/AAiPbdsnzo1jySxRqVjc64ibnoc.png"
+  },
+  {
+    "type": "image",
+    "token": "ZqvSbJnysocsYqxAikBco4lZnsh",
+    "name": "这张图片展示了三个刷写相关的文件列表，分别是MCUF_H47A3621802AH_DRIVER.hex（驱动文件）、H47A3621802AH_APP_01.h",
+    "local_path": "public/mcu-docs/images/ZqvSbJnysocsYqxAikBco4lZnsh.png"
+  },
+  {
+    "type": "image",
+    "token": "QoV8byPM9ojp7fxxn4scNnWWnfh",
+    "name": "图片展示了车辆前顶部的双闪按键区域。画面中，红色框突出显示了双闪按键，其上有红色三角形标识。该图片与文档中“BMS刷写要下整车高压”部分内容相关，上下文提到长按",
+    "local_path": "public/mcu-docs/images/QoV8byPM9ojp7fxxn4scNnWWnfh.png"
+  },
+  {
+    "type": "image",
+    "token": "C3lSbd5ARoItvcx6DD3cpqyunDd",
+    "name": "这是一张标注车辆相关术语对照的表格图片，内容涵盖序号、术语及对应名称两列信息，分为左右两个区块呈现。左侧区块收录了如PHEV代表混合动力、ABS/EBD代表防抱",
+    "local_path": "public/mcu-docs/images/C3lSbd5ARoItvcx6DD3cpqyunDd.png"
+  },
+  {
+    "type": "image",
+    "token": "C10BbnsvYoLKNmxBFe3cphqbnzd",
+    "name": "这张图片展示了一辆银灰色的纯电SUV的外观示意图，图中用两处蓝色图形标记出汽车的前后位置，对应的就是文档中提及的前后电驱在整车里的布设位置，该内容用于辅助说明电",
+    "local_path": "public/mcu-docs/images/C10BbnsvYoLKNmxBFe3cphqbnzd.png"
+  },
+  {
+    "type": "image",
+    "token": "CDTqbWzpMoWUQxxyZDSc99v2n4d",
+    "name": "图片展示的是一个软件包文件夹内容，文件夹名为“MCUF_H47A3621802AH.zip”。文件夹内包含三个文件，分别是“MCUF_H47A3621802AH",
+    "local_path": "public/mcu-docs/images/CDTqbWzpMoWUQxxyZDSc99v2n4d.png"
+  },
+  {
+    "type": "image",
+    "token": "N9LjbxeijodavNxxw8pc2rVynSd",
+    "name": "图片展示了驱动电机故障指示灯的点亮情况。左侧是点亮的灯图标，右侧对应文字说明。驱动电机故障指示灯点亮（一般）时，驱动电机发生故障；点亮（严重）时，驱动电机发生严",
+    "local_path": "public/mcu-docs/images/N9LjbxeijodavNxxw8pc2rVynSd.png"
+  },
+  {
+    "type": "image",
+    "token": "MA6fb0wDSolPcux51i7cdxJAn1c",
+    "name": "图片展示了动力系统故障指示灯的点亮情况。左侧有汽车图标，右侧文字说明。上方文字为“动力系统故障指示灯：动力系统出现故障时，此灯点亮（一般）”，下方文字为“动力系",
+    "local_path": "public/mcu-docs/images/MA6fb0wDSolPcux51i7cdxJAn1c.png"
+  },
+  {
+    "type": "image",
+    "token": "AJXQbTr69odXiPxNd2DcQoKxnnf",
+    "name": "该图片呈现的是功率限制指示灯相关内容，该指示灯为橙色圆形，内部带有乌龟样式标识，对应的说明文字为“功率限制指示灯：功率输出被限制时，此灯点亮”。该内容对应文档中",
+    "local_path": "public/mcu-docs/images/AJXQbTr69odXiPxNd2DcQoKxnnf.png"
+  },
+  {
+    "type": "image",
+    "token": "VB0ubwzUwoR3pZxhR5qcf54JnQd",
+    "name": "图片内容为电机及控制器过热报警灯的说明，该报警灯的标识为带有红色蒸汽线条的红色杯形图标，相关说明文字显示：当冷却系统出现故障，或者电机温度传感器出现故障时，此灯",
+    "local_path": "public/mcu-docs/images/VB0ubwzUwoR3pZxhR5qcf54JnQd.png"
+  },
+  {
+    "type": "image",
+    "token": "Pr5GbUgEtoeLDYxQhiRcvLf3nOb",
+    "name": "图片展示的是三相坐标系下的电流变换矩阵。矩阵中包含ia、ib、ic三个变量，对应α、β、γ三个坐标轴。其中，ia与α坐标轴的系数为1，与β坐标轴的系数为0；ib",
+    "local_path": "public/mcu-docs/images/Pr5GbUgEtoeLDYxQhiRcvLf3nOb.png"
+  },
+  {
+    "type": "image",
+    "token": "FdH0bggwkoUCNKxAhRVcev4bnbd",
+    "name": "图片展示了电机坐标变换中Clarke变换的数学公式。公式中，Ia、Ib、Ic分别代表三相定子电流，Ia'、Ib'、Ic'是经过Clarke变换后的d、q、0轴电",
+    "local_path": "public/mcu-docs/images/FdH0bggwkoUCNKxAhRVcev4bnbd.png"
+  },
+  {
+    "type": "image",
+    "token": "HzckbpZ3Rodqw7xuEuCcBCbKned",
+    "name": "图片展示了电压变换矩阵的公式。其为Park变换矩阵的逆矩阵，因旋转矩阵为正交矩阵，逆矩阵等于转置矩阵。公式中，ud、uq、uα、uβ分别代表d、q轴的目标电压和",
+    "local_path": "public/mcu-docs/images/HzckbpZ3Rodqw7xuEuCcBCbKned.png"
+  },
+  {
+    "type": "image",
+    "token": "VRXjbygmKoYPSqxr5O9c3QWOnYd",
+    "name": "图片展示了永磁同步电机d/q轴的电压方程，为“u_d = L_d * (d i_d / dt) + R_s * i_d + L_d * L_q / L_d * ",
+    "local_path": "public/mcu-docs/images/VRXjbygmKoYPSqxr5O9c3QWOnYd.png"
+  },
+  {
+    "type": "image",
+    "token": "MGISbqfwEoCwYLxgRvGcGcfan8d",
+    "name": "图片展示了七段式SVPWM的矢量图。图中以A、B、C为坐标轴，形成六边形，六边形内有U0、U1、U2、U3、U4、U5、U6、U7八个矢量，每个矢量对应一个开关",
+    "local_path": "public/mcu-docs/images/MGISbqfwEoCwYLxgRvGcGcfan8d.png"
+  },
+  {
+    "type": "image",
+    "token": "T5vXbguphooxVHxUr5FcGTexn4u",
+    "name": "该图片展示了两种不同的PWM波形时序图，左侧波形对应文档中提及的磁场定向控制的相关时序，右侧为另一类对比时序图，两者横轴均标注了总周期Tₛ，并划分了不同的时间区",
+    "local_path": "public/mcu-docs/images/T5vXbguphooxVHxUr5FcGTexn4u.png"
+  },
+  {
+    "type": "file",
+    "token": "Fbq2b9TOwob3fuxhLP0cfTiXnUe",
+    "name": "CANoe10.0的安装步骤.pdf",
+    "local_path": "public/mcu-docs/files/Fbq2b9TOwob3fuxhLP0cfTiXnUe.pdf"
+  },
+  {
+    "type": "file",
+    "token": "HEJFbC9FXoolesxwiUwcs94xnVy",
+    "name": "PCAN-Explorer5基本使用方法new.pdf",
+    "local_path": "public/mcu-docs/files/HEJFbC9FXoolesxwiUwcs94xnVy.pdf"
+  },
+  {
+    "type": "file",
+    "token": "PkyxbGIBIor074xLbb0ckG70nNf",
+    "name": "PeakOemDrv.exe",
+    "local_path": "public/mcu-docs/files/PkyxbGIBIor074xLbb0ckG70nNf.exe"
+  }
+]
