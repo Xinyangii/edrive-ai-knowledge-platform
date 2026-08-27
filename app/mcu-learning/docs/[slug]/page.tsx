@@ -64,13 +64,18 @@ function postProcessHtml(html: string): string {
     }
   );
 
-  // 3. 修复 <figure> 附件标签 → 下载链接
+  // 3. 修复 <figure> 附件标签 → 本地下载链接
+  const localFileMap: Record<string, string> = {
+    "Fbq2b9TOwob3fuxhLP0cfTiXnUe": "/mcu-docs/files/CANoe10.pdf",
+    "HEJFbC9FXoolesxwiUwcs94xnVy": "/mcu-docs/files/PCAN-Explorer5.pdf",
+    "PkyxbGIBIor074xLbb0ckG70nNf": "/mcu-docs/files/PeakOemDrv.exe",
+  };
   html = html.replace(
     /<figure[^>]*>[\s\S]*?<source[^>]*name="([^"]*)"[^>]*mime="([^"]*)"[^>]*token="([^"]*)"[^>]*\/>[\s\S]*?<\/figure>/g,
     (_, name, mime, token) => {
       const icon = mime.includes("pdf") ? "📕" : mime.includes("download") ? "📦" : "📎";
-      const url = `https://hav4xarv6k.feishu.cn/file/${token}`;
-      return `<div style="background:#f8f9fa;border:1px solid #e8ecee;border-radius:12px;padding:14px 18px;margin:14px 0;display:flex;align-items:center;gap:12px"><span style="font-size:20px">${icon}</span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">${name}</div><a href="${url}" target="_blank" rel="noopener noreferrer" style="color:var(--link);font-size:12px;text-decoration:underline">点击下载 / 查看</a></div></div>`;
+      const localPath = localFileMap[token] || `https://hav4xarv6k.feishu.cn/file/${token}`;
+      return `<div style="background:#f8f9fa;border:1px solid #e8ecee;border-radius:12px;padding:14px 18px;margin:14px 0;display:flex;align-items:center;gap:12px"><span style="font-size:20px">${icon}</span><div><div style="font-weight:600;font-size:14px;color:var(--ink)">${name}</div><a href="${localPath}" target="_blank" rel="noopener noreferrer" style="color:var(--link);font-size:12px;text-decoration:underline">点击下载 / 查看</a></div></div>`;
     }
   );
 
