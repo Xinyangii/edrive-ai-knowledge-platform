@@ -1,7 +1,12 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import Link from "next/link";
 import { markdownToHtml } from "@/lib/markdown";
+
+// ====== 全部 MCU 文档直接静态导入，无 Node.js fs/path 依赖 ======
+import doc_how_to_use_tools from "@/content/mcu-docs/how-to-use-tools.md?raw";
+import doc_edrive_system from "@/content/mcu-docs/edrive-system.md?raw";
+import doc_project_onboarding from "@/content/mcu-docs/project-onboarding.md?raw";
+import doc_start_work from "@/content/mcu-docs/start-work.md?raw";
+import doc_professional_advancement from "@/content/mcu-docs/professional-advancement.md?raw";
 
 // ====== 飞书文档引用映射 ======
 // 将 doc-id 和 file-type 映射为可点击的飞书链接
@@ -91,11 +96,11 @@ function postProcessHtml(html: string): string {
 }
 
 const allDocs = [
-  { slug: "how-to-use-tools", title: "如何使用工具", chapter: "第一章" },
-  { slug: "edrive-system", title: "如何认识电驱系统", chapter: "第二章" },
-  { slug: "project-onboarding", title: "如何接手一个项目", chapter: "第三章" },
-  { slug: "start-work", title: "如何开始具体工作", chapter: "第四章" },
-  { slug: "professional-advancement", title: "如何变得更加专业", chapter: "第五章" },
+  { slug: "how-to-use-tools", title: "如何使用工具", chapter: "第一章", content: doc_how_to_use_tools },
+  { slug: "edrive-system", title: "如何认识电驱系统", chapter: "第二章", content: doc_edrive_system },
+  { slug: "project-onboarding", title: "如何接手一个项目", chapter: "第三章", content: doc_project_onboarding },
+  { slug: "start-work", title: "如何开始具体工作", chapter: "第四章", content: doc_start_work },
+  { slug: "professional-advancement", title: "如何变得更加专业", chapter: "第五章", content: doc_professional_advancement },
 ];
 
 export async function generateStaticParams() {
@@ -104,8 +109,8 @@ export async function generateStaticParams() {
 
 export default async function DocPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const docPath = join(process.cwd(), "content/mcu-docs", `${slug}.md`);
-  const markdownContent = readFileSync(docPath, "utf-8");
+  const docEntry = allDocs.find(d => d.slug === slug) || allDocs[0];
+  const markdownContent = docEntry.content;
   const htmlContent = postProcessHtml(markdownToHtml(markdownContent));
 
   const currentIdx = allDocs.findIndex(d => d.slug === slug);
