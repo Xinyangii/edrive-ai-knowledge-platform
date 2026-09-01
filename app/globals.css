@@ -548,6 +548,53 @@ a.application-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-
 .knowledge-link-list span { color: #77827c; font-size: 11.5px; }
 .knowledge-link-list i { color: var(--link); font-style: normal; }
 
+/* ===== Markdown 文章排版（MCU 学习平台等） ===== */
+.knowledge-article h1 {
+  font-size: clamp(32px, 4vw, 48px); letter-spacing: -.04em; margin: 0 0 20px; line-height: 1.2;
+}
+.knowledge-article h3 {
+  font-size: 20px; margin: 36px 0 14px; color: #2a3a32; letter-spacing: -.02em;
+}
+.knowledge-article h4 {
+  font-size: 15.5px; margin: 24px 0 10px; color: #3a4d44; font-weight: 700;
+}
+.knowledge-article ul, .knowledge-article ol {
+  padding-left: 24px; margin: 16px 0; color: #4f5e56;
+}
+.knowledge-article li {
+  padding: 6px 0; line-height: 1.85; font-size: 14.5px;
+}
+.knowledge-article li ul, .knowledge-article li ol { margin: 6px 0; }
+.knowledge-article strong { color: #1a2a22; font-weight: 700; }
+.knowledge-article code {
+  background: #eff2ef; padding: 2px 7px; border-radius: 5px; font-size: 13px; color: #3a5546; font-family: var(--font-num);
+}
+.knowledge-article pre {
+  background: #1a2720; color: #d4e0d8; padding: 20px 24px; border-radius: 12px; overflow-x: auto; margin: 20px 0; font-size: 13px; line-height: 1.7;
+}
+.knowledge-article pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+.knowledge-article table {
+  width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13.5px;
+}
+.knowledge-article td, .knowledge-article th {
+  border: 1px solid #dde3df; padding: 10px 14px; text-align: left; line-height: 1.7;
+}
+.knowledge-article th { background: #f5f7f5; font-weight: 700; color: #2a3a32; }
+.knowledge-article hr { border: 0; border-top: 1px solid #dde3df; margin: 36px 0; }
+.knowledge-article blockquote {
+  border-left: 4px solid #3b82f6; background: #f8f9fa; margin: 20px 0; padding: 16px 22px; border-radius: 0 10px 10px 0; color: #4a5b6a; font-size: 14px; line-height: 1.8;
+}
+
+/* 图片：自动约束宽度 + 居中 + 浅色背景便于公式阅读 */
+.knowledge-article img {
+  max-width: 100%; height: auto;
+  display: block; margin: 28px auto;
+  border-radius: 10px;
+  background: #fafbfa;
+  padding: 12px;
+  border: 1px solid #e8ece9;
+}
+
 /* ===== Footer ===== */
 footer { min-height: 140px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; gap: 30px; background: var(--navy); color: #93a5b2; font-size: 12.5px; }
 .footer-brand { color: #fff; }

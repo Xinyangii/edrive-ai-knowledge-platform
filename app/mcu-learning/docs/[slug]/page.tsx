@@ -92,6 +92,12 @@ function postProcessHtml(html: string): string {
     }
   );
 
+  // 5. 图片：添加 loading="lazy" + 响应式约束
+  html = html.replace(
+    /<img\s+src="([^"]+)"\s+alt="([^"]*)"/g,
+    '<img src="$1" alt="$2" loading="lazy" style="max-width:100%;height:auto;display:block;margin:28px auto;border-radius:10px;background:#fafbfa;padding:12px;border:1px solid #e8ece9"'
+  );
+
   return html;
 }
 
